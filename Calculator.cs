@@ -89,7 +89,7 @@ namespace PolivalkaTask
 				(true, false) => 4
 			};
 
-			const double x1 = 1, y1 = 0; // координаты вектора отсчета (0;1)
+			const double x1 = 1, y1 = 0; // координаты вектора отсчета (1;0)
 
 			var vectorMultiple = x1 * dx + y1 * dy;
 			var scalarMultiple1 = Math.Sqrt(x1 * x1 + y1 * y1);
@@ -100,7 +100,7 @@ namespace PolivalkaTask
 			var beta = Math.Round(Math.Acos(cosValue) / Math.PI * 180, 4); // угол цветка относительно поливалки
 
 			if (coordQuarter == 3 || coordQuarter == 4)
-				beta += 180;
+				beta = 360 - beta;
 
 			return lowLim <= beta && beta <= highLim;
 		}
